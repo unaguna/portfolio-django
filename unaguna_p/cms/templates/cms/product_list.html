@@ -1,0 +1,21 @@
+{% extends "cms/base.html" %}
+
+{% block title %}製作物{% endblock title %}
+
+{% block content %}
+  <h4 class="mt-4 border-bottom">製作物</h4>
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      {% for product in products %}
+        <div class="col-6">
+          <div class="card product_list__item_card">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.article.title }}</h5>
+              <p class="card-text">{{ product.article.overview }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
