@@ -6,12 +6,12 @@
   <h4 class="mt-4 border-bottom">記事の一覧</h4>
   <div class="container-fluid">
     <div class="row no-gutters">
-      {% for article in articles %}
+      {% for product in products %}
         <div class="col-6">
-          <div class="card article_list__item_card">
+          <div class="card product_list__item_card">
             <div class="card-body">
-              <h5 class="card-title">{{ article.title }}</h5>
-              <p class="card-text">{{ article.overview }}</p>
+              <h5 class="card-title">{{ product.article.title }}</h5>
+              <p class="card-text">{{ product.article.overview }}</p>
             </div>
           </div>
         </div>

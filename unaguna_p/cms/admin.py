@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Article
+from .models import Article, Product
 
 
 # モデル Article の表示を定義
@@ -13,3 +13,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 # モデル Article を登録
 admin.site.register(Article, ArticleAdmin)
+
+
+# モデル Product を登録
+admin.site.register(Product)
