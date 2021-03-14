@@ -1,0 +1,7 @@
+.article_list__item_card {
+    margin: 0.5rem;
+}
+
+.article_list__item_card .card-text {
+    font-size: 10.5pt;
+}
