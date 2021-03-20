@@ -1,4 +1,5 @@
 {% extends "cms/base.html" %}
+{% load static %}
 
 {% block title %}製作物{% endblock title %}
 
@@ -12,6 +13,24 @@
             <div class="card-body">
               <h5 class="card-title">{{ product.article.title }}</h5>
               <p class="card-text">{{ product.article.overview }}</p>
+              <div class="container-fluid">
+                <div class="row justify-content-end">
+                  {% if product.url_github %}
+                    <div class="col-auto">
+                      <a href="{{ product.url_github }}" title="GitHub" target="_blank">
+                        <img src="{% static 'cms/img/github.png' %}" class="article__link_ico" />
+                      </a>
+                    </div>
+                  {% endif %}
+                  {% if product.url_chrome_store %}
+                    <div class="col-auto">
+                      <a href="{{ product.url_chrome_store }}" title="Chrome Web ストア" target="_blank">
+                        <img src="{% static 'cms/img/g_chrome.png' %}" class="article__link_ico" />
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
             </div>
           </div>
         </div>
