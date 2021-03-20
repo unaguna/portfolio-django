@@ -1,1 +1,1 @@
-web: gunicorn unaguna_p.unaguna_p.wsgi --log-file -
+web: gunicorn unaguna_p.wsgi --log-file -
