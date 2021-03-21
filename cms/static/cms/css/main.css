@@ -5,3 +5,12 @@
 .product_list__item_card .card-text {
     font-size: 10.5pt;
 }
+
+.article__link_ico {
+    width: 16px;
+    height: 16px;
+}
+
+.product_list__link_row > * {
+    margin: 0 0.5rem;
+}
