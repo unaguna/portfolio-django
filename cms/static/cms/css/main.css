@@ -6,6 +6,26 @@
     font-size: 10.5pt;
 }
 
+.product_list__item_card .tag_list {
+    padding: 0;
+    font-size: 0;
+    margin: 0em;
+}
+
+.product_list__item_card .tag_list .tag_list__tag_item {
+    display: inline-block;
+    font-size: 10.5pt;
+    padding-left: 0em;
+    padding-right: 0em;
+}
+
+.product_list__item_card .tag_list .tag_list__separator {
+    display: inline-block;
+    font-size: 10.5pt;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
 .article__link_ico {
     width: 16px;
     height: 16px;
