@@ -15,6 +15,15 @@
               <p class="card-text">{{ product.article.overview }}</p>
               <div>
                 <div class="row no-gutters justify-content-end product_list__link_row">
+                  {% if product.url_product %}
+                    <div class="col-auto card-text">
+                      <a href="{{ product.url_product }}" target="_blank">
+                        実物を見る
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="row no-gutters justify-content-end product_list__link_row">
                   {% if product.url_github %}
                     <div class="col-auto">
                       <a href="{{ product.url_github }}" title="GitHub" target="_blank">
