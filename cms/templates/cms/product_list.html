@@ -22,6 +22,13 @@
                       </a>
                     </div>
                   {% endif %}
+                  {% if product.url_pypi %}
+                    <div class="col-auto">
+                      <a href="{{ product.url_pypi }}" title="PyPI" target="_blank">
+                        <img src="{% static 'cms/img/pypi.png' %}" class="article__link_ico" />
+                      </a>
+                    </div>
+                  {% endif %}
                   {% if product.url_chrome_store %}
                     <div class="col-auto">
                       <a href="{{ product.url_chrome_store }}" title="Chrome Web ストア" target="_blank">
