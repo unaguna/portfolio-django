@@ -18,6 +18,7 @@ class Product(models.Model):
     article = models.OneToOneField(Article, verbose_name='記事', related_name='product', on_delete=models.CASCADE)
     url_github = models.CharField('GitHub URL', max_length=255, blank=True)
     url_chrome_store = models.CharField('GoogleChrome URL', max_length=255, blank=True)
+    url_firefox_addons = models.CharField('Firefox ADD-ONS URL', max_length=255, blank=True)
 
     def __str__(self):
         return self.article.title

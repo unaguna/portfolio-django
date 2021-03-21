@@ -29,6 +29,13 @@
                       </a>
                     </div>
                   {% endif %}
+                  {% if product.url_firefox_addons %}
+                    <div class="col-auto">
+                      <a href="{{ product.url_firefox_addons }}" title="Firefox ADD-ONS" target="_blank">
+                        <img src="{% static 'cms/img/firefox_addons.png' %}" class="article__link_ico" />
+                      </a>
+                    </div>
+                  {% endif %}
                 </div>
               </div>
             </div>
