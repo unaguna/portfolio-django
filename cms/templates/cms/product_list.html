@@ -75,7 +75,9 @@
               <ul class="row tag_list">
                 <li class="col-auto tag_list__header">タグ：</li>
                 {% for tag in product.article.tag_list.all %}
-                  <li class="col-auto tag_list__tag_item">{{ tag.name }}</li>
+                  <li class="col-auto tag_list__tag_item">
+                    <a href="{% url 'cms:product_list_by_tag' tag_id=tag.id %}">{{ tag.name }}</a>
+                  </li>
                   {% if not forloop.last %}<li class="col-auto tag_list__separator">|</li>{% endif %}
                 {% endfor %}
               </ul>
