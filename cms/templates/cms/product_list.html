@@ -24,6 +24,15 @@
                   {% endif %}
                 </div>
                 <div class="row no-gutters justify-content-end product_list__link_row">
+                  {% if product.url_document %}
+                    <div class="col-auto card-text">
+                      <a href="{{ product.url_document }}" target="_blank">
+                        ドキュメントを見る
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="row no-gutters justify-content-end product_list__link_row">
                   {% if product.url_github %}
                     <div class="col-auto">
                       <a href="{{ product.url_github }}" title="GitHub" target="_blank">

@@ -17,6 +17,7 @@ class Product(models.Model):
     """
     article = models.OneToOneField(Article, verbose_name='記事', related_name='product', on_delete=models.CASCADE)
     url_product = models.CharField('Product URL', max_length=255, blank=True)
+    url_document = models.CharField('Document URL', max_length=255, blank=True)
     url_github = models.CharField('GitHub URL', max_length=255, blank=True)
     url_pypi = models.CharField('PyPI', max_length=255, blank=True)
     url_chrome_store = models.CharField('GoogleChrome URL', max_length=255, blank=True)
