@@ -1,12 +1,22 @@
 from django.db import models
 
 
+class Tag(models.Model):
+    """タグ
+    """
+    name = models.CharField('タグ名', max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class Article(models.Model):
     """記事
     """
     title = models.CharField('タイトル', max_length=255)
     overview = models.TextField('概要')
     body = models.TextField('本文', blank=True)
+    tag_list = models.ManyToManyField(Tag)
 
     def __str__(self):
         return self.title
