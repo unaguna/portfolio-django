@@ -12,6 +12,14 @@
     margin: 0em;
 }
 
+.product_list__item_card .tag_list .tag_list__header {
+    display: inline-block;
+    font-size: 10.5pt;
+    padding-left: 0em;
+    padding-right: 0.25em;
+    font-weight: bold;
+}
+
 .product_list__item_card .tag_list .tag_list__tag_item {
     display: inline-block;
     font-size: 10.5pt;

@@ -73,6 +73,7 @@
                 </div>
               </div>
               <ul class="row tag_list">
+                <li class="col-auto tag_list__header">タグ：</li>
                 {% for tag in product.article.tag_list.all %}
                   <li class="col-auto tag_list__tag_item">{{ tag.name }}</li>
                   {% if not forloop.last %}<li class="col-auto tag_list__separator">|</li>{% endif %}
