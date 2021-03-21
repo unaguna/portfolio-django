@@ -16,7 +16,7 @@ class Article(models.Model):
     title = models.CharField('タイトル', max_length=255)
     overview = models.TextField('概要')
     body = models.TextField('本文', blank=True)
-    tag_list = models.ManyToManyField(Tag)
+    tag_list = models.ManyToManyField(Tag, related_name='article')
 
     def __str__(self):
         return self.title

@@ -72,6 +72,11 @@
                   {% endif %}
                 </div>
               </div>
+              <ul>
+                {% for tag in product.article.tag_list.all %}
+                  <li>{{ tag.name }}</li>
+                {% endfor %}
+              </ul>
             </div>
           </div>
         </div>
