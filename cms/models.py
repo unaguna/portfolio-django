@@ -19,6 +19,7 @@ class Product(models.Model):
     url_product = models.CharField('Product URL', max_length=255, blank=True)
     url_document = models.CharField('Document URL', max_length=255, blank=True)
     url_github = models.CharField('GitHub URL', max_length=255, blank=True)
+    url_android = models.CharField('Google Play URL', max_length=255, blank=True)
     url_pypi = models.CharField('PyPI', max_length=255, blank=True)
     url_chrome_store = models.CharField('GoogleChrome URL', max_length=255, blank=True)
     url_firefox_addons = models.CharField('Firefox ADD-ONS URL', max_length=255, blank=True)
