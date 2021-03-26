@@ -47,6 +47,11 @@ class TagResource(resources.ModelResource):
 
 # モデル Tag の表示を定義
 class TagAdmin(ImportExportModelAdmin):
+    # 一覧に表示するフィールド
+    list_display = ('id', 'name',)
+    # 修正リンクでクリックできる項目
+    list_display_links = ('id', 'name',)
+
     # django-import-exportsの設定
     resource_class = TagResource
 

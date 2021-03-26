@@ -17,7 +17,6 @@ def product_list_by_tag(request, tag_id):
     """
     tag = Tag.objects.get(id=tag_id)
     articles = tag.article.all()
-    print(articles)
     products = Product.objects.filter(article__in=articles).order_by('id')
     return render(request,
                   'cms/product_list.html',

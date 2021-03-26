@@ -4,6 +4,7 @@ from django.db import models
 class Tag(models.Model):
     """タグ
     """
+    id = models.CharField(max_length=32, primary_key=True)
     name = models.CharField('タグ名', max_length=255)
 
     def __str__(self):
