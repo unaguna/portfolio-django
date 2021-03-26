@@ -6,9 +6,13 @@ class Tag(models.Model):
     """
     id = models.CharField(max_length=32, primary_key=True)
     name = models.CharField('タグ名', max_length=255)
+    priority_rank = models.IntegerField('優先順位', default=255, null=False)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ('priority_rank',)
 
 
 class Article(models.Model):
@@ -21,6 +25,9 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_tag_list(self):
+        return self.tag_list.order_by('priority_rank')
 
 
 class Product(models.Model):
