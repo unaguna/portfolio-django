@@ -1,6 +1,16 @@
 from django.shortcuts import render
 
-from .models import Product, Tag
+from .models import Product, Tag, Article
+
+
+def product_page(request, article_id):
+    """記事（製作物）
+    """
+    article = Article.objects.get(id=article_id)
+    product = Product.objects.get(article=article)
+    return render(request,
+                  'cms/product.html',
+                  {'product': product})
 
 
 def product_list(request):

@@ -1,0 +1,20 @@
+{% extends "cms/base.html" %}
+{% load static %}
+
+{% block title %}{{ product.article.title }}{% endblock title %}
+
+{% block content %}
+  <h1 class="mt-4 border-bottom">{{ product.article.title }}</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {{ product.article.overview }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        {{ product.article.body }}
+      </div>
+    </div>
+  </div>
+{% endblock content %}
