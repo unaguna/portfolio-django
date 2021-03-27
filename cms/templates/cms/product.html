@@ -5,7 +5,16 @@
 
 {% block content %}
   <h1 class="mt-4 border-bottom">{{ product.article.title }}</h1>
-  <div class="container">
+  <div class="container article_page__container">
+    <ul class="row tag_list">
+      <li class="col-auto tag_list__header">タグ：</li>
+      {% for tag in product.article.tag_list.all %}
+        <li class="col-auto tag_list__tag_item">
+          <a href="{% url 'cms:product_list_by_tag' tag_id=tag.id %}">{{ tag.name }}</a>
+        </li>
+        {% if not forloop.last %}<li class="col-auto tag_list__separator">|</li>{% endif %}
+      {% endfor %}
+    </ul>
     <div class="row">
       <div class="col-12">
         {{ product.article.overview }}
@@ -16,5 +25,14 @@
         {{ product.article.body }}
       </div>
     </div>
+    <ul class="row tag_list">
+      <li class="col-auto tag_list__header">タグ：</li>
+      {% for tag in product.article.tag_list.all %}
+        <li class="col-auto tag_list__tag_item">
+          <a href="{% url 'cms:product_list_by_tag' tag_id=tag.id %}">{{ tag.name }}</a>
+        </li>
+        {% if not forloop.last %}<li class="col-auto tag_list__separator">|</li>{% endif %}
+      {% endfor %}
+    </ul>
   </div>
 {% endblock content %}
