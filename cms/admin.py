@@ -2,7 +2,7 @@ from django.contrib import admin
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Article, Product
+from .models import Article, Product, Tag
 
 
 class ArticleResource(resources.ModelResource):
@@ -38,3 +38,23 @@ class ProductAdmin(ImportExportModelAdmin):
 
 # モデル Product を登録
 admin.site.register(Product, ProductAdmin)
+
+
+class TagResource(resources.ModelResource):
+    class Meta:
+        model = Tag
+
+
+# モデル Tag の表示を定義
+class TagAdmin(ImportExportModelAdmin):
+    # 一覧に表示するフィールド
+    list_display = ('id', 'name',)
+    # 修正リンクでクリックできる項目
+    list_display_links = ('id', 'name',)
+
+    # django-import-exportsの設定
+    resource_class = TagResource
+
+
+# モデル Tag を登録
+admin.site.register(Tag, TagAdmin)

@@ -6,6 +6,33 @@
     font-size: 10.5pt;
 }
 
+.product_list__item_card .tag_list {
+    padding: 0;
+    font-size: 0;
+    margin: 0em;
+}
+
+.product_list__item_card .tag_list > * {
+    display: inline-block;
+    font-size: 10.5pt;
+}
+
+.product_list__item_card .tag_list .tag_list__header {
+    padding-left: 0em;
+    padding-right: 0.25em;
+    font-weight: bold;
+}
+
+.product_list__item_card .tag_list .tag_list__tag_item {
+    padding-left: 0em;
+    padding-right: 0em;
+}
+
+.product_list__item_card .tag_list .tag_list__separator {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
 .article__link_ico {
     width: 16px;
     height: 16px;
