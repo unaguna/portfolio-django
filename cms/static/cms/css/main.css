@@ -2,6 +2,10 @@
     margin: 0.5rem;
 }
 
+.product_list__item_card .card-title a {
+    color: unset;
+}
+
 .product_list__item_card .card-text {
     font-size: 10.5pt;
 }
