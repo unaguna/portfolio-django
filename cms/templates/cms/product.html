@@ -1,0 +1,101 @@
+{% extends "cms/base.html" %}
+{% load static %}
+{% load myfilter %}
+
+{% block title %}{{ product.article.title }}{% endblock title %}
+
+{% block content %}
+  <div class="container article_page__container">
+    <div class="article_page__header">
+      <h1 class="mt-4">{{ product.article.title }}</h1>
+      <ul class="row tag_list">
+        <li class="col-auto tag_list__header">タグ：</li>
+        {% for tag in product.article.tag_list.all %}
+          <li class="col-auto tag_list__tag_item">
+            <a href="{% url 'cms:product_list_by_tag' tag_id=tag.id %}">{{ tag.name }}</a>
+          </li>
+          {% if not forloop.last %}<li class="col-auto tag_list__separator">|</li>{% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        {{ product.article.overview }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>外部リンク</h2>
+        <ul>
+          {% if product.url_product %}
+            <li>
+              <a href="{{ product.url_product }}" target="_blank">
+                実物を見る
+              </a>
+            </li>
+          {% endif %}
+          {% if product.url_document %}
+            <li>
+              <a href="{{ product.url_document }}" target="_blank">
+                ドキュメントを見る
+              </a>
+            </li>
+          {% endif %}
+          {% if product.url_android %}
+            <li>
+              <a href="{{ product.url_android }}" target="_blank">
+                <img src="{% static 'cms/img/android.png' %}" height="36px" />
+              </a>
+            </li>
+          {% endif %}
+          {% if product.url_github %}
+            <li>
+              <a href="{{ product.url_github }}" title="GitHub" target="_blank">
+                <img src="{% static 'cms/img/github.png' %}" class="article__link_ico" />
+                GitHub
+              </a>
+            </li>
+          {% endif %}
+          {% if product.url_pypi %}
+            <li>
+              <a href="{{ product.url_pypi }}" title="PyPI" target="_blank">
+                <img src="{% static 'cms/img/pypi.png' %}" class="article__link_ico" />
+                PyPI
+              </a>
+            </li>
+          {% endif %}
+          {% if product.url_chrome_store %}
+            <li>
+              <a href="{{ product.url_chrome_store }}" title="Chrome Web ストア" target="_blank">
+                <img src="{% static 'cms/img/g_chrome.png' %}" class="article__link_ico" />
+                Chrome Web ストア
+              </a>
+            </li>
+          {% endif %}
+          {% if product.url_firefox_addons %}
+            <li>
+              <a href="{{ product.url_firefox_addons }}" title="Firefox ADD-ONS" target="_blank">
+                <img src="{% static 'cms/img/firefox_addons.png' %}" class="article__link_ico" />
+                Firefox ADD-ONS
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        {{ product.article.body | markdown2html | safe }}
+      </div>
+    </div>
+    <ul class="row tag_list">
+      <li class="col-auto tag_list__header">タグ：</li>
+      {% for tag in product.article.tag_list.all %}
+        <li class="col-auto tag_list__tag_item">
+          <a href="{% url 'cms:product_list_by_tag' tag_id=tag.id %}">{{ tag.name }}</a>
+        </li>
+        {% if not forloop.last %}<li class="col-auto tag_list__separator">|</li>{% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock content %}

@@ -11,9 +11,24 @@
         <div class="col-6">
           <div class="card product_list__item_card">
             <div class="card-body">
-              <h5 class="card-title">{{ product.article.title }}</h5>
+              <h5 class="card-title">
+                {% if product.article.body %}
+                  <a href="{% url 'cms:product' article_id=product.article.id %}">{{ product.article.title }}</a>
+                {% else %}
+                <span title="※この製作物の記事はありません">{{ product.article.title }}</span>
+                {% endif %}
+              </h5>
               <p class="card-text">{{ product.article.overview }}</p>
               <div>
+                <div class="row no-gutters justify-content-end product_list__link_row">
+                  {% if product.article.body %}
+                    <div class="col-auto card-text">
+                      <a href="{% url 'cms:product' article_id=product.article.id %}">
+                        続きを読む
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
                 <div class="row no-gutters justify-content-end product_list__link_row">
                   {% if product.url_product %}
                     <div class="col-auto card-text">
